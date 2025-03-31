@@ -5,6 +5,7 @@
  * To learn more about Gradle by exploring our Samples at https://docs.gradle.org/8.4/samples
  */
 plugins{
+	pmd
 	java
 }
 
@@ -25,6 +26,10 @@ tasks.named<Test>("test"){
 	useJUnitPlatform()
 }
 
+pmd{
+	maxFailures = 10000
+	toolVersion = "6.33.0"
+}
 
 /**
 *plugins{
